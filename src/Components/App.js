@@ -1,24 +1,13 @@
-import React from 'react';
+import React from "react";
+//import Nav from "./Nav";
+import NewNav from "./NewNav";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="/joey_logo.png" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NewNav />
     </div>
   );
-}
+};
 
 export default App;
