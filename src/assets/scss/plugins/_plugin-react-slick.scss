@@ -158,8 +158,8 @@ button.slick-arrow.slick-next {
   left: 0;
   &::before {
     content: "\f053";
-    font-weight: 600;
-    font-family: Font awesome\5 Free;
+    font-weight: 900;
+    font-family: "Font awesome 5 Free";
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
@@ -167,7 +167,7 @@ button.slick-arrow.slick-next {
     font-variant: normal;
     text-rendering: auto;
     line-height: 1;
-    color: white;
+    color: black;
     font-size: 30px;
     width: 100%;
   }
@@ -177,15 +177,16 @@ button.slick-arrow.slick-next {
   &::before {
     content: "\f054";
     font-weight: 600;
-    font-family: Font awesome\5 Free;
+    font-family: "Font Awesome 5 Free";
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
     font-style: normal;
+    font-feature-settings: normal;
     font-variant: normal;
     text-rendering: auto;
     line-height: 1;
-    color: #fff;
+    color: black;
     font-size: 30px;
     width: 100%;
   }

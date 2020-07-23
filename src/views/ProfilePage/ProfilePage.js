@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
+
 // @material-ui/icons
 import Camera from "@material-ui/icons/Camera";
 import CodeIcon from "@material-ui/icons/Code";
@@ -10,6 +11,8 @@ import MailIcon from "@material-ui/icons/Mail";
 import WebIcon from "@material-ui/icons/Web";
 import Palette from "@material-ui/icons/Palette";
 import Favorite from "@material-ui/icons/Favorite";
+import Check from "@material-ui/icons/Check";
+import Warning from "@material-ui/icons/Warning";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -38,6 +41,11 @@ import work3 from "assets/img/examples/cynthia-del-rio.jpg";
 import work4 from "assets/img/examples/mariya-georgieva.jpg";
 import work5 from "assets/img/examples/clem-onojegaw.jpg";
 
+import SnackbarContent from "components/Snackbar/SnackbarContent.js";
+import Snackbar from "@material-ui/core/Snackbar";
+// core components
+import Clearfix from "components/Clearfix/Clearfix.js";
+
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
 const useStyles = makeStyles(styles);
@@ -50,9 +58,49 @@ export default function ProfilePage(props) {
     classes.imgRoundedCircle,
     classes.imgFluid
   );
+
+  const [snackBarOpen, setSnackBarStatus] = useState(false);
+
+  const handleOpen = () => {
+    setSnackBarStatus(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setSnackBarStatus(false);
+  };
+
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   return (
     <div>
+      <div style={{ textAlign: "left" }}>
+        <Snackbar
+          anchorOrigin={{
+            //options are "top", "right", "bottom", "left", "center"
+            vertical: "bottom",
+            horizontal: "center",
+          }}
+          open={snackBarOpen}
+          autoHideDuration={3000}
+          onClose={handleClose}
+        >
+          <div style={{ width: "80vw" }}>
+            <SnackbarContent
+              message={
+                <span>
+                  <b>Your message has been sent successfully!</b>
+                </span>
+              }
+              close
+              color="success"
+              icon={Check}
+            />
+            <Clearfix />
+          </div>
+        </Snackbar>
+      </div>
       <Header
         color="transparent"
         brand="Joseph Ronselli"
@@ -70,7 +118,7 @@ export default function ProfilePage(props) {
         className={classNames(classes.main, classes.mainRaised)}
       >
         <div>
-          <div id="testing" className={classes.container}>
+          <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
@@ -106,7 +154,7 @@ export default function ProfilePage(props) {
                           style={{ marginTop: "10px" }}
                           justify="center"
                         >
-                          <GridItem xs={12} md={6} lg={4}>
+                          <GridItem xs={12} md={6}>
                             <ProjectsCarousel />
                           </GridItem>
                         </GridContainer>
@@ -154,8 +202,11 @@ export default function ProfilePage(props) {
                       tabIcon: MailIcon,
                       tabContent: (
                         <GridContainer justify="center">
-                          <GridItem xs={10} sm={8}>
-                            <Contact />
+                          <GridItem xs={10} sm={8} md={6}>
+                            <Contact
+                              snackOpen={handleOpen}
+                              snackClose={handleClose}
+                            />
                           </GridItem>
                         </GridContainer>
                       ),

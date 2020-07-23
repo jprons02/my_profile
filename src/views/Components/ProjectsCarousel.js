@@ -17,8 +17,8 @@ import image3 from "assets/img/bg3.jpg";
 
 export default function SectionCarousel() {
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,

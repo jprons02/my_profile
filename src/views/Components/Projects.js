@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
+import Button from "components/CustomButtons/Button.js";
 
 import {
   cardTitle,
@@ -31,26 +32,34 @@ const Projects = () => {
       }}
     >
       <CardBody>
-        <h4 className={classes.cardTitle}>Card Title</h4>
+        <h4 style={{ marginBottom: "10px" }} className={classes.cardTitle}>
+          Card Title
+        </h4>
         <h6 className={classes.cardSubtitle}>Card Subtitle</h6>
-        <p>
+        <p style={{ marginTop: "10px" }}>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </p>
-        <a
-          href="#pablo"
-          className={classes.cardLink}
-          onClick={(e) => e.preventDefault()}
-        >
-          Card link
-        </a>
-        <a
-          href="#pablo"
-          className={classes.cardLink}
-          onClick={(e) => e.preventDefault()}
-        >
-          Another link
-        </a>
+        <div style={{ marginTop: "20px" }}>
+          <a
+            color="primary"
+            style={{ cursor: "pointer", fontWeight: 400 }}
+            className={classes.cardLink}
+            onClick={(e) => e.preventDefault()}
+          >
+            PLAY DEMO
+          </a>
+          <a
+            color="primary"
+            style={{ fontWeight: 400 }}
+            target="_blank"
+            href="#pablo"
+            className={classes.cardLink}
+            onClick={(e) => e.preventDefault()}
+          >
+            GITHUB
+          </a>
+        </div>
       </CardBody>
     </Card>
   );
