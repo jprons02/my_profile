@@ -159,7 +159,7 @@ button.slick-arrow.slick-next {
   &::before {
     content: "\f053";
     font-weight: 900;
-    font-family: "Font awesome 5 Free";
+    font-family: "Font Awesome 5 Free";
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
@@ -209,6 +209,7 @@ button.slick-arrow.slick-next {
 }
 .slick-dots li,
 .slick-dots li button {
+  top: 50px;
   width: 20px;
   height: 20px;
   cursor: pointer;
@@ -230,7 +231,6 @@ button.slick-arrow.slick-next {
   background: transparent;
   &::before {
     position: absolute;
-    top: 0;
     left: 0;
     width: 10px;
     height: 10px;
@@ -251,5 +251,4 @@ button.slick-arrow.slick-next {
   height: 15px;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  top: -3px;
 }

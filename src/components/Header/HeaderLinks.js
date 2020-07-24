@@ -1,9 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-import DeleteIcon from "@material-ui/icons/Delete";
-import IconButton from "@material-ui/core/IconButton";
-// react components for routing our app without refresh
-import { Link } from "react-router-dom";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -11,11 +7,9 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
-// @material-ui/icons
-import { Apps, CloudDownload } from "@material-ui/icons";
+import { FaFileAlt } from "react-icons/fa";
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
@@ -25,6 +19,9 @@ const useStyles = makeStyles(styles);
 export default function HeaderLinks(props) {
   const classes = useStyles();
   const marginRight = { marginRight: "6px" };
+  const resumeLink =
+    "https://drive.google.com/file/d/1DsjCYhH-5o5d1UFuJ_WlmNtTvXBiEnzp/view?usp=sharing";
+
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
@@ -42,6 +39,7 @@ export default function HeaderLinks(props) {
           <Button
             href="https://www.linkedin.com/in/joseph-ronselli/"
             target="_blank"
+            rel="noopener noreferrer"
             color="transparent"
             className={classes.navLink}
           >
@@ -63,6 +61,7 @@ export default function HeaderLinks(props) {
           <Button
             color="transparent"
             href="https://www.facebook.com/joey.ronselli"
+            rel="noopener noreferrer"
             target="_blank"
             className={classes.navLink}
           >
@@ -84,6 +83,7 @@ export default function HeaderLinks(props) {
           <Button
             color="transparent"
             href="https://github.com/jprons02"
+            rel="noopener noreferrer"
             target="_blank"
             className={classes.navLink}
           >
@@ -95,6 +95,19 @@ export default function HeaderLinks(props) {
           </Button>
         </Tooltip>
       </ListItem>
+      <ListItem className={classes.listItem}>
+        <Button
+          color="transparent"
+          href={resumeLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.navLink}
+        >
+          <FaFileAlt /> Resume
+        </Button>
+      </ListItem>
     </List>
   );
 }
+
+//'https://drive.google.com/file/d/1DsjCYhH-5o5d1UFuJ_WlmNtTvXBiEnzp/view?usp=sharing'
