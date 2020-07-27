@@ -91,7 +91,7 @@ const ProjectsCard = (props) => {
             {props.deployedLink !== "" ? (
               renderProjectLink()
             ) : (
-              <div style={{ height: "17px" }}></div>
+              <div style={{ height: "24px" }}></div>
             )}
           </CardFooter>
           <CardFooter className={classes.textMuted}>
