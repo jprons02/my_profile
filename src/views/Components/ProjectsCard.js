@@ -76,7 +76,14 @@ const ProjectsCard = (props) => {
             {props.summary}
           </p>
         </CardBody>
-        <div id="footer-elements" style={{ height: "100px" }}>
+        <div
+          id="footer-elements"
+          style={{
+            minHeight: "100px",
+            paddingTop: "10px",
+            paddingBottom: "10px",
+          }}
+        >
           <CardFooter
             style={{ paddingTop: "0", paddingBottom: "0" }}
             className={classes.textMuted}
