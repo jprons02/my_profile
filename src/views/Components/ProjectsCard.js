@@ -67,12 +67,14 @@ const ProjectsCard = (props) => {
           textAlign: "left",
         }}
       >
-        <CardBody style={{ height: "185px" }}>
+        <CardBody style={{ height: "190px" }}>
           <h4 style={{ marginBottom: "10px" }} className={classes.cardTitle}>
             {props.title}
           </h4>
           <h6 className={classes.cardSubtitle}>{props.subTitle}</h6>
-          <p style={{ marginTop: "10px" }}>{props.summary}</p>
+          <p style={{ marginTop: "10px", lineHeight: "1.3" }}>
+            {props.summary}
+          </p>
         </CardBody>
         <div id="footer-elements" style={{ height: "100px" }}>
           <CardFooter

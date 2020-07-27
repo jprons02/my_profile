@@ -12,7 +12,7 @@ import quoteGenVideo from "assets/video/sbtb_quote.mov";
 import markdownVideo from "assets/video/markdown.mov";
 import wikipediaVideo from "assets/video/wikipedia.mov";
 
-export default function SectionCarousel() {
+export default function SectionCarousel(props) {
   const settings = {
     dots: true,
     autoplay: true,

@@ -13,7 +13,9 @@ import {
   FaDatabase,
 } from "react-icons/fa";
 
-const Skills = () => {
+const Skills = (props) => {
+  console.log(props.matches);
+
   const skillsArray = [
     {
       iconName: "React JS",
@@ -64,7 +66,7 @@ const Skills = () => {
           key={skill.iconName}
           id="icon"
           style={{
-            fontSize: "60px",
+            fontSize: props.matches ? "60px" : "40px",
             display: "inline-block",
             margin: "15px 25px",
           }}
@@ -79,7 +81,9 @@ const Skills = () => {
   };
 
   return (
-    <div style={{ marginTop: "5px", textAlign: "center" }}>
+    <div
+      style={{ marginTop: props.matches ? "5px" : "15px", textAlign: "center" }}
+    >
       {renderSkills()}
     </div>
   );

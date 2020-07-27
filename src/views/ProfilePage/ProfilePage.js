@@ -48,6 +48,7 @@ export default function ProfilePage(props) {
       margin: "auto",
     }),
     profileInner: (isMobile) => ({ paddingLeft: "5px", paddingRight: "5px" }),
+    skillsIconSize: (isMobile) => ({ fontSize: "30px" }),
   };
 
   const classes = useStyles();
@@ -110,17 +111,11 @@ export default function ProfilePage(props) {
       />
       <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
       <div
-        //NEED MEDIA QUERY HERE FOR MOBILE
-        //width: 95%, margin: auto
-        id="profile-outer"
         style={({ height: "100%" }, mobileStyles.profileOuter(matches))}
         className={classNames(classes.main, classes.mainRaised)}
       >
         <div>
           <div
-            id="profile-inner"
-            //NEED MEDIA QUERY HERE FOR MOBILE
-            //paddingLeft: 5px, paddingRight: 5px
             style={mobileStyles.profileInner(matches)}
             className={classes.container}
           >
@@ -171,7 +166,7 @@ export default function ProfilePage(props) {
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={10} lg={8}>
-                            <Skills />
+                            <Skills matches={matches} />
                           </GridItem>
                         </GridContainer>
                       ),
