@@ -40,6 +40,23 @@ const ProjectsCard = (props) => {
     }
   };
 
+  const renderProjectLink = () => {
+    return (
+      <div style={{ marginBottom: "-13px" }}>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.link}
+          href={props.deployedLink}
+        >
+          <Button style={{ padding: "5px 0 5px 2px" }} simple color="rose">
+            Project Link
+          </Button>
+        </a>
+      </div>
+    );
+  };
+
   const renderCard = () => {
     return (
       <Card
@@ -57,14 +74,26 @@ const ProjectsCard = (props) => {
           <h6 className={classes.cardSubtitle}>{props.subTitle}</h6>
           <p style={{ marginTop: "10px" }}>{props.summary}</p>
         </CardBody>
-        <CardFooter className={classes.textMuted}>
-          <Button color="rose" onClick={openModal}>
-            PLAY DEMO
-          </Button>
-          <a href={props.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Button color="rose">GITHUB</Button>
-          </a>
-        </CardFooter>
+        <div id="footer-elements" style={{ height: "100px" }}>
+          <CardFooter
+            style={{ paddingTop: "0", paddingBottom: "0" }}
+            className={classes.textMuted}
+          >
+            {props.deployedLink !== "" ? (
+              renderProjectLink()
+            ) : (
+              <div style={{ height: "17px" }}></div>
+            )}
+          </CardFooter>
+          <CardFooter className={classes.textMuted}>
+            <Button color="rose" onClick={openModal}>
+              DEMO VIDEO
+            </Button>
+            <a href={props.githubUrl} target="_blank" rel="noopener noreferrer">
+              <Button color="rose">GITHUB</Button>
+            </a>
+          </CardFooter>
+        </div>
       </Card>
     );
   };
@@ -100,53 +129,4 @@ const ProjectsCard = (props) => {
 
 export default ProjectsCard;
 
-/*
-from other github portfolio branch.
-<Dialog
-maxWidth={false}
-onClose={() => setOpen1(false)}
-aria-labelledby="simple-dialog-title"
-open={open1}
->
-<video
-  width="100%"
-  controls
-  src={props.videoPath}
-  poster=""
-  autoPlay={true}
->
-  Sorry, your browser doesn't support embedded videos, but don't worry,
-  you can <a href={props.videoPath}>download it</a>
-  and watch it with your favorite video player!
-</video>
-</Dialog>
-*/
-
-/* 
-ORIGINAL
-
-      <Dialog
-        maxWidth={false}
-        classes={{
-          root: classes.center,
-          paper: classes.modal,
-        }}
-        open={modal}
-        keepMounted
-        onClose={() => setModal(false)}
-        aria-labelledby="modal-slide-title"
-        aria-describedby="modal-slide-description"
-      >
-        <video
-          width="100%"
-          controls
-          src={props.videoSource}
-          poster=""
-          autoPlay={true}
-        >
-          Sorry, your browser doesn't support embedded videos, but don't worry,
-          you can <a href={props.videoSource}>download it</a>
-          and watch it with your favorite video player!
-        </video>
-      </Dialog>
-*/
+//{props.deployedLink !== "" ? renderProjectLink() : ""}
