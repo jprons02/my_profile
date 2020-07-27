@@ -14,8 +14,6 @@ import {
 } from "react-icons/fa";
 
 const Skills = (props) => {
-  console.log(props.matches);
-
   const skillsArray = [
     {
       iconName: "React JS",
