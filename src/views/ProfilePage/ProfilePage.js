@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -31,6 +31,25 @@ import styles from "assets/jss/material-kit-react/views/profilePage.js";
 const useStyles = makeStyles(styles);
 
 export default function ProfilePage(props) {
+  const mediaMatch = window.matchMedia("(min-width: 600px)");
+  const [snackBarOpen, setSnackBarStatus] = useState(false);
+  const [matches, setMatches] = useState(mediaMatch.matches);
+
+  useEffect(() => {
+    const handler = (e) => setMatches(e.matches);
+    mediaMatch.addListener(handler);
+    return () => mediaMatch.removeListener(handler);
+  });
+
+  const mobileStyles = {
+    profileOuter: (isMobile) => ({
+      height: "100%",
+      width: "95%",
+      margin: "auto",
+    }),
+    profileInner: (isMobile) => ({ paddingLeft: "5px", paddingRight: "5px" }),
+  };
+
   const classes = useStyles();
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -38,8 +57,6 @@ export default function ProfilePage(props) {
     classes.imgRoundedCircle,
     classes.imgFluid
   );
-
-  const [snackBarOpen, setSnackBarStatus] = useState(false);
 
   const handleOpen = () => {
     setSnackBarStatus(true);
@@ -93,11 +110,20 @@ export default function ProfilePage(props) {
       />
       <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
       <div
-        style={{ height: "100%" }}
+        //NEED MEDIA QUERY HERE FOR MOBILE
+        //width: 95%, margin: auto
+        id="profile-outer"
+        style={({ height: "100%" }, mobileStyles.profileOuter(matches))}
         className={classNames(classes.main, classes.mainRaised)}
       >
         <div>
-          <div className={classes.container}>
+          <div
+            id="profile-inner"
+            //NEED MEDIA QUERY HERE FOR MOBILE
+            //paddingLeft: 5px, paddingRight: 5px
+            style={mobileStyles.profileInner(matches)}
+            className={classes.container}
+          >
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
