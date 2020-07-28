@@ -3,7 +3,7 @@
 //using .env
 
 export default {
-  serviceID: process.env.serviceID,
-  templateID: process.env.templateID,
-  userID: process.env.userID,
+  serviceID: process.env.REACT_APP_SERVICE_ID,
+  templateID: process.env.REACT_APP_TEMPLATE_ID,
+  userID: process.env.REACT_APP_USER_ID,
 };
