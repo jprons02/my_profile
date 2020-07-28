@@ -16,10 +16,6 @@ import keys from "../../config/keys";
 const useStyles = makeStyles(styles);
 
 const Contact = (props) => {
-  console.log("service id: ", keys.serviceID);
-  console.log("template id: ", keys.templateID);
-  console.log("user id: ", keys.userID);
-
   const classes = useStyles();
 
   const [nameValue, setNameValue] = useState("");
