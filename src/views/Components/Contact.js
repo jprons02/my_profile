@@ -19,8 +19,6 @@ const Contact = (props) => {
   console.log("service id: ", keys.serviceID);
   console.log("template id: ", keys.templateID);
   console.log("user id: ", keys.userID);
-  console.log('process.env: ' process.env.serviceID);
-  
 
   const classes = useStyles();
 
