@@ -62,7 +62,7 @@ export default function SectionCarousel(props) {
       videoSource: drumMachineVideo,
       githubUrl: "https://github.com/jprons02/drum_machine",
       deployedLink: "https://jpr-drum-machine.herokuapp.com/",
-      hasSound: true,
+      hasSound: false,
     },
     {
       title: "Portfolio",
