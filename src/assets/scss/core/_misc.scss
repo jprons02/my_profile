@@ -5,6 +5,10 @@ html * {
 body {
   font-size: 1rem;
 }
+html,
+body {
+  overflow-x: hidden;
+}
 body,
 h1,
 h2,
