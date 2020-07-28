@@ -5,12 +5,12 @@ import Carousel from "react-slick";
 import ProjectsCard from "./ProjectsCard";
 
 //videos
-import mapaVideo from "assets/video/app_mapa.mov";
-import drumMachineVideo from "assets/video/drum_machine.mov";
-import portfolioWebsite from "assets/video/portfolio_website.mov";
-import quoteGenVideo from "assets/video/sbtb_quote.mov";
-import markdownVideo from "assets/video/markdown.mov";
-import wikipediaVideo from "assets/video/wikipedia.mov";
+import mapaVideo from "assets/video/app_mapa.mp4";
+import drumMachineVideo from "assets/video/drum_machine.mp4";
+import portfolioWebsite from "assets/video/portfolio_website.mp4";
+import quoteGenVideo from "assets/video/sbtb_quote.mp4";
+import markdownVideo from "assets/video/markdown.mp4";
+import wikipediaVideo from "assets/video/wikipedia.mp4";
 
 export default function SectionCarousel(props) {
   const settings = {
