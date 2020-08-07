@@ -31,7 +31,7 @@ export default function SectionCarousel(props) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          initialSlide: 1,
+          initialSlide: 0,
         },
       },
       {
@@ -39,7 +39,7 @@ export default function SectionCarousel(props) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 1,
+          initialSlide: 0,
         },
       },
     ],
