@@ -1,6 +1,7 @@
 import React from "react";
 // react component for creating beautiful carousel
-import Carousel from "react-slick";
+//import Carousel from "react-slick";
+import Slider from "react-slick";
 
 import ProjectsCard from "./ProjectsCard";
 
@@ -23,6 +24,7 @@ export default function SectionCarousel(props) {
     arrows: false,
     initialSlide: 0,
     pauseOnHover: true,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1050,
@@ -122,7 +124,7 @@ export default function SectionCarousel(props) {
 
   return (
     <div style={{ margin: "auto" }}>
-      <Carousel {...settings}>{renderCarouselContent()}</Carousel>
+      <Slider {...settings}>{renderCarouselContent()}</Slider>
     </div>
   );
 }
