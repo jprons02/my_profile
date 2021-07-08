@@ -16,14 +16,14 @@ import wikipediaVideo from "assets/video/wikipedia.mp4";
 export default function SectionCarousel(props) {
   const settings = {
     dots: true,
-    autoplay: true,
-    infinite: true,
-    speed: 1000,
+    //autoplay: true,
+    //infinite: true,
+    speed: 300,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     initialSlide: 0,
-    pauseOnHover: true,
+    //pauseOnHover: true,
     swipeToSlide: true,
     responsive: [
       {

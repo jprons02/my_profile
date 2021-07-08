@@ -11,6 +11,7 @@ import {
   FaSass,
   FaPhp,
   FaDatabase,
+  FaAws,
 } from "react-icons/fa";
 
 const Skills = (props) => {
@@ -24,8 +25,8 @@ const Skills = (props) => {
       icon: () => <FaJsSquare />,
     },
     {
-      iconName: "PHP",
-      icon: () => <FaPhp />,
+      iconName: "AWS",
+      icon: () => <FaAws />,
     },
     {
       iconName: "Node.js",

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { keys } from "keys.js";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import CircularProgress from "@material-ui/core/CircularProgress";
@@ -9,9 +11,6 @@ import Button from "components/CustomButtons/Button.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
 // styles
 import styles from "assets/jss/material-kit-react/views/componentsSections/loginStyle.js";
-// email service
-import emailjs from "emailjs-com";
-import keys from "../../config/keys";
 
 const useStyles = makeStyles(styles);
 
@@ -35,36 +34,45 @@ const Contact = (props) => {
     }
   };
 
+  console.log("name ", nameValue);
+
+  const resetInputs = () => {
+    setNameValue("");
+    setEmailValue("");
+    setMessageValue("");
+  };
+
   const handleSubmit = async (e) => {
     // persist needed for e.target.reset(). prevents react from clearing event pool.
     e.persist();
     e.preventDefault();
-
     setLoadingState(true);
 
-    var templateParams = {
-      name: nameValue,
-      email: emailValue,
-      message: messageValue,
+    const callback = (value) => {
+      setLoadingState(false);
+      if (value === "error") {
+        alert("Error sending email, please try again later.");
+      }
+      resetInputs();
     };
 
-    emailjs
-      .send(keys.serviceID, keys.templateID, templateParams, keys.userID)
-      .then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-          if (response.status === 200) {
-            e.target.reset();
-            props.snackOpen();
-            setLoadingState(false);
-          }
+    try {
+      const response = await axios({
+        method: "POST",
+        url: "https://llnaae68vk.execute-api.us-east-1.amazonaws.com/prod",
+        data: { name: nameValue, email: emailValue, message: messageValue },
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": keys.portfolioSiteAPI,
         },
-        function (error) {
-          console.log("FAILED...", error);
-          alert("Message not sent!");
-          setLoadingState(false);
-        }
-      );
+      });
+      if (response.data) {
+        callback();
+      }
+    } catch (error) {
+      console.log("error: ", error);
+      callback("error");
+    }
   };
 
   const renderForm = () => {
@@ -113,32 +121,41 @@ const Contact = (props) => {
               inputProps={{
                 onChange: handleInputChange,
                 multiline: true,
-                rows: 3,
               }}
             />
           </GridItem>
-          <Button
-            simple
-            type="submit"
-            color="primary"
-            className={classes.button}
-          >
-            SEND MESSAGE
-          </Button>
+          <div style={{ position: "relative" }}>
+            <Button
+              simple
+              type="submit"
+              color="primary"
+              className={classes.button}
+              disabled={loadingState}
+            >
+              SEND MESSAGE
+            </Button>
+            {loadingState ? (
+              <CircularProgress
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  marginTop: "-12px",
+                  marginLeft: "-12px",
+                  color: "#9c27b0",
+                }}
+                size={24}
+                color="primary"
+              />
+            ) : (
+              ""
+            )}
+          </div>
         </GridContainer>
       </form>
     );
   };
-
-  return (
-    <div>
-      {loadingState ? (
-        <CircularProgress style={{ color: "#9c27b0", marginTop: "50px" }} />
-      ) : (
-        renderForm()
-      )}
-    </div>
-  );
+  return <div>{renderForm()}</div>;
 };
 
 export default Contact;

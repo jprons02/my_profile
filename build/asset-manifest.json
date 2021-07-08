@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.de566a0a.chunk.css",
+    "main.js": "/static/js/main.4109cbc5.chunk.js",
+    "main.js.map": "/static/js/main.4109cbc5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.47788c5d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.47788c5d.js.map",
+    "static/js/2.787f266c.chunk.js": "/static/js/2.787f266c.chunk.js",
+    "static/js/2.787f266c.chunk.js.map": "/static/js/2.787f266c.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a5dd2d24e41a4b97da44af3a691b2f04.js": "/precache-manifest.a5dd2d24e41a4b97da44af3a691b2f04.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.de566a0a.chunk.css.map": "/static/css/main.de566a0a.chunk.css.map",
+    "static/js/2.787f266c.chunk.js.LICENSE.txt": "/static/js/2.787f266c.chunk.js.LICENSE.txt",
+    "static/media/app_mapa.mp4": "/static/media/app_mapa.0e036e25.mp4",
+    "static/media/drum_machine.mp4": "/static/media/drum_machine.cc539d00.mp4",
+    "static/media/markdown.mp4": "/static/media/markdown.fdbfc25c.mp4",
+    "static/media/me.jpg": "/static/media/me.8e1a9e97.jpg",
+    "static/media/portfolio_website.mp4": "/static/media/portfolio_website.54496d00.mp4",
+    "static/media/profile-bg.jpg": "/static/media/profile-bg.baf6b40a.jpg",
+    "static/media/sbtb_quote.mp4": "/static/media/sbtb_quote.39a79abc.mp4",
+    "static/media/wikipedia.mp4": "/static/media/wikipedia.d4630720.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.47788c5d.js",
+    "static/js/2.787f266c.chunk.js",
+    "static/css/main.de566a0a.chunk.css",
+    "static/js/main.4109cbc5.chunk.js"
+  ]
+}
