@@ -9,9 +9,9 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaSass,
-  FaPhp,
   FaDatabase,
   FaAws,
+  FaFigma,
 } from "react-icons/fa";
 
 const Skills = (props) => {
@@ -55,6 +55,10 @@ const Skills = (props) => {
     {
       iconName: "Photoshop",
       icon: () => <FaAdobe />,
+    },
+    {
+      iconName: "Figma",
+      icon: () => <FaFigma />,
     },
   ];
 

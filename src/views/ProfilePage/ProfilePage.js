@@ -25,6 +25,7 @@ import ProjectsCarousel from "../Components/ProjectsCarousel";
 import Skills from "../Components/Skills";
 // my face!
 import profile from "assets/img/faces/me.jpg";
+//import profile from "assets/img/faces/7-IMG_5719.jpeg";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
@@ -123,7 +124,7 @@ export default function ProfilePage(props) {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={imageClasses} />
+                    <img src={profile} alt="joey" className={imageClasses} />
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>Joseph Ronselli</h3>

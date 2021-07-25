@@ -20,7 +20,7 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   const marginRight = { marginRight: "6px" };
   const resumeLink =
-    "https://drive.google.com/file/d/1DsjCYhH-5o5d1UFuJ_WlmNtTvXBiEnzp/view?usp=sharing";
+    "https://drive.google.com/file/d/11AwYjK0pmbgPcvS4LOY0X6KTTtRXRZfl/view?usp=sharing";
 
   return (
     <List className={classes.list}>
