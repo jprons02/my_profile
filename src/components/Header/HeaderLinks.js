@@ -20,7 +20,7 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
   const marginRight = { marginRight: '6px' };
   const resumeLink =
-    'https://drive.google.com/file/d/1xf50NiU950roKX8t31tBTtpQdtDLYCsv/view?usp=sharing';
+    'https://drive.google.com/file/d/1qioaK-_aXcocvXOAb1V8t7LGzDXtTiaN/view?usp=sharing';
 
   return (
     <List className={classes.list}>
@@ -111,5 +111,3 @@ export default function HeaderLinks(props) {
     </List>
   );
 }
-
-//'https://drive.google.com/file/d/1DsjCYhH-5o5d1UFuJ_WlmNtTvXBiEnzp/view?usp=sharing'
